@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+		<script src="jquery-2.1.3.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<div><a href="index.htm">Home</a></div>
+			<div><a href="u_index.htm">Utilities</a></div>
+			<div><a href="news.htm">News</a></div>
+			<div><a href="contact.htm">Contact</a></div>
+			<div class="right">Log In</div>
+		</div>
+		<div id="main">
+			<img id="bg" src="resources/regionbg.jpg" />
+			<div class="abs">
+				<h1>Region Utility.</h1>
+				<p>Select type, tech level, and anything else you know.</p>
+			</div>
+		</div>
+		<br>
+		<table id="regioninput">
+			<tr>
+				<th>Region Type</th>
+				<th>Era / Tech Level</th>
+				<th>Known Data</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>
+					<button class="selector typeselect" onClick="regiongen.button('settlement', 'type');">Settlement</button><br>
+					<button class="selector typeselect" onClick="regiongen.button('city', 'type');">City</button><br>
+					<button class="selector typeselect" onClick="regiongen.button('country', 'type');">Country</button><br>
+					<button class="selector typeselect" onClick="regiongen.button('planet', 'type');">Planet</button><br>
+					<button class="selector typeselect" onClick="regiongen.button('system', 'type');">System</button><br>
+					<button class="selector typeselect" onClick="regiongen.button('sector', 'type');">Sector</button><br>
+				</td>
+				<td>
+					<button class="selector techselect" onClick="regiongen.button('primitive', 'tech');">Primitive</button><br>
+					<button class="selector techselect" onClick="regiongen.button('fantasy', 'tech');">Fantasy</button><br>
+					<button class="selector techselect" onClick="regiongen.button('industrial', 'tech');">Industrial</button><br>
+					<button class="selector techselect" onClick="regiongen.button('modern', 'tech');">Modern</button><br>
+					<button class="selector techselect" onClick="regiongen.button('scifi', 'tech');">Scifi</button><br>
+					<button class="selector techselect" onClick="regiongen.button('post-scarcity', 'tech');">Post-scarcity</button><br>
+				</td>
+				<td id="inputnames">
+					<div>* Area (sq. mi.):</div>
+					<div>* Population:</div>
+					<div>Pop. Density:</div>
+					<div>Age (years):</div>
+					<div>Largest Subregion (mi.):</div>
+					<div>Largest Subregion Pop:</div>
+				</td>
+				<td style="width: 500px">
+					<input type="text" name="area"/>
+					<input type="text" name="pop"/>
+					<input type="text" name="pop_dens"/>
+					<input type="text" name="age"/>
+					<input type="text" name="lsarea"/>
+					<input type="text" name="lspop"/>
+				</td>
+				<td style="width: 160px">
+					<button class="actionbutton" onClick="regiongen.button('generate')">Generate</button>
+					<br><br>
+					<button class="actionbutton" onClick="regiongen.button('clear');">Clear</button>
+				</td>
+			</tr>
+		</table>
+		
+		<div id="regionoutput">
+		</div>
+		<script>html.regiondiv("default", {}, "#regionoutput")</script>
+	</body>
+</html>
